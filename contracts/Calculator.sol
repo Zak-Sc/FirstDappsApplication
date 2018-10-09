@@ -27,7 +27,7 @@ contract Calculator {
   }
    function divideNumberBy(uint number) public returns (uint)
   {  
-     stateNumber *= number;
+     stateNumber /= number;
       return stateNumber;
   }
 
