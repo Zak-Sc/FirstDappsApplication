@@ -12,7 +12,7 @@ contract('CalculatorTest', function(accounts) {
     });
   });
     // Test case#2 Checks if  = 105
-    it("should return 105 when call to add/subtract for ((Initial_Value + 10) - 5)", ()=> {
+    it(" ((Initial_Value + 10) - 5)", ()=> {
       var calculator_instance;
       return Calculator.deployed().then((instance)=>{
         calculator_instance=instance;
@@ -28,7 +28,7 @@ contract('CalculatorTest', function(accounts) {
         assert.equal(resultas.valueOf(),105,"Congratulations");
       });
     });
-      it("should return 105 when call to add/subtract for ((Initial_Value * 100) / 2)", ()=> {
+      it(" ((Initial_Value * 100) / 2)", ()=> {
         var calculator_instance;
         return Calculator.deployed().then((instance)=>{
           calculator_instance=instance;
