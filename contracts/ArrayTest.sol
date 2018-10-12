@@ -35,8 +35,6 @@ contract ArrayTest {
     {
          bytess[i]=nameBytes[i];
     }
-
-
     return string(bytess);
     }
     
