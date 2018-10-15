@@ -32,4 +32,26 @@ contract('MappingExample_test', function(accounts) {
       assert.isTrue(results=="toronto");
      });
   });
+  it("should assert true", () => {
+    var mapping;
+     return MappingExample.deployed().then((instance)=>{
+      mapping=instance;
+     return mapping.getContinent.call(0);
+     }).then((results)=>{
+       console.log("should return Africa :"+results);
+       assert.isTrue(results=="africa");
+     });
+  });
+  it("should assert true", () => {
+    var mapping;
+     return MappingExample.deployed().then((instance)=>{
+      mapping=instance;
+     mapping.addAfricanContinent("morocco","rabat",0);
+     mapping.addAfricanContinent("tunis","tunis",0);
+     return mapping.getAfricanContinentByName.call("tunis");
+     }).then((results)=>{
+       console.log("should return "+results);
+       assert.isFalse(false,results);
+     });
+  });
 });
