@@ -5,7 +5,6 @@ contract MultiNumberBettingV4 {
   uint8[] array;
   uint loserCount;
   uint winnerCount;
-  uint lastWinnerAt;
   address winner;
   struct Winner {
     address winnerAddress;
@@ -36,23 +35,9 @@ contract MultiNumberBettingV4 {
   function totalGuesses() public view  returns(uint){
     return loserCount+winnerCount;
   }
-  function daysSinceLastWinning() returns (uint){
-   return (now- lastWinnerAt*1 days);
-  }
-  function hoursSinceLastWinning()returns (uint){
-   return ((now- lastWinnerAt)*1 hours);
+  function getLastWinnerInfo() returns (address winnerAddress, string name, uint guess, uint guessedAt){
+    //ListWinner[winnerAddress];
     
   }
-  function minuteSinceLastWinning()returns (uint){
-   return (now- lastWinnerAt*1 minutes);
-    
-  }
-  function Ethdays()returns (uint){
-    uint time=now;
-   return (time/60/60/24);
-    
-  }
-  function getLastWinnerInf() returns (winner adr, winner name, uint guess, timeGuessed){
-    
-  }
+
 }
