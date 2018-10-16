@@ -1,15 +1,17 @@
 
-var MultiNumberBettingV3=artifacts.require('./MultiNumberBettingV3.sol');
+var MultiNumberBettingV4=artifacts.require('./MultiNumberBettingV4.sol');
 contract('Calculator_V3_test', function(accounts) {
   it("should assert true", ()=> {
     var instance ;
-    return  MultiNumberBettingV3.deployed().then((CalculatorV2)=>{
-      instance=CalculatorV2; 
+    return  MultiNumberBettingV4.deployed().then((CalculatorV4)=>{
+      instance=CalculatorV4; 
     }).then(()=>{
-      instance.guess(10,"test");
-      return instance.Ethdays.call();
+      instance.guess(15,"z3bil");
+      return instance.getLastWinnerInfo.call();
+      //return instance.guess.call(15,"z3bil");
     }).then((results)=>{
-      assert.equal(results.valueOf(),"tes");
+      //console.log("addres "+results[0]+"numero"+results[1]+"name:"+results[2]+"time"+results[3]);
+      assert.equal(results[2].valueOf(),"z3bil");
     });
   });
 });

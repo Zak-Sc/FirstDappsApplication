@@ -13,7 +13,6 @@ contract MultiNumberBettingV3 {
   }
   function guess(uint8 num,string nameguess )public  returns (bool)
   {
-    require(num<10);
     for(uint8 i;i<array.length;i++)
     {
       if(array[i]==num)

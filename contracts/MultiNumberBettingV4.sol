@@ -17,7 +17,6 @@ contract MultiNumberBettingV4 {
   }
   function guess(uint8 num,string nameguess )public  returns (bool)
   {
-    require(num<10);
     for(uint8 i;i<array.length;i++)
     {
       if(array[i]==num)
@@ -37,8 +36,9 @@ contract MultiNumberBettingV4 {
     return loserCount+winnerCount;
   }
   function getLastWinnerInfo() public  returns (address winnerAddress, uint8 numeroGuessed, string nameguess, uint guessedAt) {
-    Winner memory wn=ListWinner[winner];
-    return (wn.winnerAddress,wn.num,wn.guess,wn.guessedAt);   
+   // Winner memory wn=ListWinner[winner];
+    //return (wn.winnerAddress,wn.num,wn.guess,wn.guessedAt);   
+    return (ListWinner[winner].winnerAddress,ListWinner[winner].num,ListWinner[winner].guess,ListWinner[winner].guessedAt);
   }
   function checkWinning(address adr) public returns(bool)
   {

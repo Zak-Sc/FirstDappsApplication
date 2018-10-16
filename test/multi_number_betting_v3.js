@@ -6,10 +6,11 @@ contract('Calculator_V3_test', function(accounts) {
     return  MultiNumberBettingV3.deployed().then((CalculatorV2)=>{
       instance=CalculatorV2; 
     }).then(()=>{
-      instance.guess(10,"test");
-      return instance.Ethdays.call();
+      return instance.guess.call(15,"test");
+     // return instance.Ethdays.call();
     }).then((results)=>{
-      assert.equal(results.valueOf(),"tes");
+      console.log(results);
+      assert.isTrue(results,"true");
     });
   });
 });
