@@ -22,6 +22,7 @@ contract MultiNumberBettingV4 {
     {
       if(array[i]==num)
       {
+        winner=msg.sender;
         ListWinner[msg.sender]= Winner(msg.sender,num,nameguess,now);
         winnerCount++;
         return true;
@@ -35,9 +36,18 @@ contract MultiNumberBettingV4 {
   function totalGuesses() public view  returns(uint){
     return loserCount+winnerCount;
   }
-  function getLastWinnerInfo() returns (address winnerAddress, string name, uint guess, uint guessedAt){
-    //ListWinner[winnerAddress];
-    
+  function getLastWinnerInfo() public  returns (address winnerAddress, uint8 numeroGuessed, string nameguess, uint guessedAt) {
+    Winner memory wn=ListWinner[winner];
+    return (wn.winnerAddress,wn.num,wn.guess,wn.guessedAt);   
+  }
+  function checkWinning(address adr) public returns(bool)
+  {
+    if (ListWinner[adr].winnerAddress == 0x0 )
+    {
+      return false;
+    }
+    else
+    return true;
   }
 
 }
