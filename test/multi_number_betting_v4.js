@@ -8,7 +8,6 @@ contract('Calculator_V3_test', function(accounts) {
     }).then(()=>{
       instance.guess(15,"z3bil");
       return instance.getLastWinnerInfo.call();
-      //return instance.guess.call(15,"z3bil");
     }).then((results)=>{
       //console.log("addres "+results[0]+"numero"+results[1]+"name:"+results[2]+"time"+results[3]);
       assert.equal(results[2].valueOf(),"z3bil");
