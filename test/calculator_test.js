@@ -8,7 +8,7 @@ contract('CalculatorTest', function(accounts) {
       calculator_instance=instance;
       return calculator_instance.getNumber.call();
     }).then((results)=>{
-       assert.equal(results.valueOf(),100,"Contract initialized with value 100!!!");
+       assert.equal(results.valueOf(),1000,"Contract initialized with value 100!!!");
     });
   });
     // Test case#2 Checks if  = 105
